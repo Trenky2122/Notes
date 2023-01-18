@@ -21,6 +21,7 @@ namespace Notes.Database
         {
             var connection = CreateConnection();
             string sql = "CREATE TABLE IF NOT EXISTS Notes (Id serial PRIMARY KEY, Category varchar(20), Title varchar(50), Text text);";
+            await connection.ExecuteAsync(sql);
         }
 
         public Task AddNote(Note note)

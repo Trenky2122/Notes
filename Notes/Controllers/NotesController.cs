@@ -14,7 +14,7 @@ namespace Notes.Controllers
         }
 
         [HttpPost]
-        public async Task AddNote(Note note)
+        public async Task AddNote([FromBody]Note note)
         {
             await _repository.AddNote(note);
         }
@@ -26,7 +26,7 @@ namespace Notes.Controllers
         }
 
         [HttpPut]
-        public async Task EditNote(Note note)
+        public async Task EditNote([FromBody]Note note)
         {
             await _repository.EditNote(note);
         }
